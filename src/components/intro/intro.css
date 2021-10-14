@@ -1,0 +1,54 @@
+.i {
+  display: flex;
+}
+
+.i-left {
+  flex: 1;
+}
+
+.i-right {
+  flex: 1;
+}
+.i-left-wrapper {
+  padding: 50px;
+}
+
+.i-intro {
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.i-name {
+  font-size: 60px;
+}
+
+.i-title {
+  height: 50px;
+  overflow: hidden;
+}
+
+.i-title-wrapper {
+  height: 100%;
+  animation: move 10s ease-in-out infinite alternate;
+}
+
+@keyframes move {
+  33% {
+    transform: translateY(-50px);
+  }
+  66% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(-150px);
+  }
+}
+
+.i-title-item {
+  height: 50px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #bccc9a;
+  display: flex;
+  align-items: center;
+}
