@@ -6,19 +6,16 @@ export const Profile = () => {
       <div className="profile-parent">
         <div className="profile-details">
           <div className="colz">
-            <a href="#">
+            <a href="https://www.facebook.com/davron.abdukhakimov.50">
               <i className="fa fa-facebook-square"></i>
             </a>
-            <a href="#">
-              <i className="fa fa-google-plus-square"></i>
-            </a>
-            <a href="#">
+            <a href="https://www.instagram.com/douwran/">
               <i className="fa fa-instagram"></i>
             </a>
-            <a href="#">
+            <a href="https://www.youtube.com/channel/UCExbuFxW_p3VQq573KWS6UQ">
               <i className="fa fa-youtube-square"></i>
             </a>
-            <a href="#">
+            <a href="https://twitter.com/Davron87284843?s=09">
               <i className="fa fa-twitter"></i>
             </a>
           </div>
