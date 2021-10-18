@@ -1,4 +1,5 @@
 import React from "react";
+import Typical from "react-typical";
 
 export const Profile = () => {
   return (
@@ -18,6 +19,36 @@ export const Profile = () => {
             <a href="https://twitter.com/Davron87284843?s=09">
               <i className="fa fa-twitter"></i>
             </a>
+          </div>
+
+          <div className="profile-details-name">
+            <span className="primary-text">
+              {" "}
+              Hello I'm <span className="highlighted-text">Dawroun</span>
+            </span>
+          </div>
+          <div className="profile-details-role">
+            <span className="primary-text">
+              {" "}
+              <h1>
+                {" "}
+                <Typical
+                  loop={Infinity}
+                  steps={[
+                    "Ethusiastic Dev",
+                    1000,
+                    "Full Stack Developer",
+                    1000,
+                    "React Developer",
+                    1000,
+                    "Cross Platform v",
+                    1000,
+                    "Content Maker",
+                    1000,
+                  ]}
+                />
+              </h1>
+            </span>
           </div>
         </div>
       </div>
