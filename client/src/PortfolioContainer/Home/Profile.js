@@ -35,20 +35,30 @@ export const Profile = () => {
                 <Typical
                   loop={Infinity}
                   steps={[
-                    "Ethusiastic Dev",
+                    "Ethusiastic Dev 😎",
                     1000,
-                    "Full Stack Developer",
+                    "Full Stack Developer 💻",
                     1000,
-                    "React Developer",
+                    "React Developer 🟣",
                     1000,
-                    "Cross Platform v",
+                    "Cross Platform v 🎩",
                     1000,
-                    "Content Maker",
+                    "Content Maker ✍🏻",
                     1000,
                   ]}
                 />
               </h1>
+              <span className="profile-role-tagline">
+                Ready to create and design cooliest websites and can teach you
+                as well.
+              </span>
             </span>
+          </div>
+          <div className="prifile-options">
+            <button className="btn primary-btn">{""} Hire Me {" "}</button>
+            <a href="NewCV.pdf" download="Dawroun's NewCV.pdf">
+              <button className="btn highlighted-btn">Get Resume</button>
+            </a>
           </div>
         </div>
       </div>
