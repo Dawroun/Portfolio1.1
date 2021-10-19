@@ -57,7 +57,7 @@ export const Profile = () => {
               </span>
             </span>
           </div>
-          <div className="prifile-options">
+          <div className="profile-options">
             <button className="btn primary-btn">{""} Hire Me </button>
             <a href="NewCV.pdf" download="Dawroun's NewCV.pdf">
               <button className="btn highlighted-btn">Get Resume</button>
