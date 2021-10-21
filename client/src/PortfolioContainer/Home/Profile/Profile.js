@@ -2,7 +2,7 @@ import React from "react";
 import Typical from "react-typical";
 import "./Profile.css";
 
-export const Profile = () => {
+export default function Profile() {
   return (
     <div className="profile-container">
       <div className="profile-parent">
@@ -58,8 +58,8 @@ export const Profile = () => {
             </span>
           </div>
           <div className="profile-options">
-            <button className="btn primary-btn">{""} Hire Me </button>
-            <a href="NewCV.pdf" download="Dawroun's NewCV.pdf">
+            <button className="btn primary-btn">{""} Hire Me {" "} </button>
+            <a href="NewCV.pdf" download="Dawroun's CV.pdf">
               <button className="btn highlighted-btn">Get Resume</button>
             </a>
           </div>
