@@ -23,6 +23,7 @@
 .header-options {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .header-option {
