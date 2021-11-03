@@ -1,5 +1,6 @@
 import { TOTAL_SCREENS } from "./commonUtils";
 import { Subject } from "rxjs";
+import { object } from "prop-types";
 
 
 export default class ScrollService {
@@ -9,7 +10,7 @@ export default class ScrollService {
     static currentScreenFadeIn = new Subject()
 
     constructor() {
-        window.addEventListener('scroll', this.checkCurrentScreenUnderViewport)
+        window.addEventListener("scroll", this.checkCurrentScreenUnderViewport);
     }
 
     scrollToHireMe = () => {
@@ -43,7 +44,7 @@ export default class ScrollService {
     }
 
     checkCurrentScreenUnderViewport = (event) => {
-        if (!event || Object.keys(event).length < 1)
+        if (!event || object.keys(event).length < 1)
             return;
         for (let screen of TOTAL_SCREENS) {
             let screenFromDOM = document.getElementById(screen.screen_name);
@@ -58,16 +59,16 @@ export default class ScrollService {
                     ScrollService.currentScreenFadeIn.next({
                         fadeInScreen: screen.screen_name
                     });
-                    screen['alreadRendered'] = true;
+                    screen['alreadyRendered'] = true;
                     break;
                 }
                 if (fullyVisible) {
                     ScrollService.currentScreenBroadCaster.next({
-                        screenInView: screen.screen_name
+                        screenInView: screen.screen_name,
                     });
                     break;
                 }
             }
         }
-    }
+    };
 }

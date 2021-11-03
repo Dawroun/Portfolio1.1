@@ -11,5 +11,6 @@ export default function Home() {
             <Profile />
             <Footer />
         </div>
+        
     )
 }

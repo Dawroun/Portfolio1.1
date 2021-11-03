@@ -22,16 +22,17 @@ export default function Header() {
     ScrollService.currentScreenBroadCaster.subscribe(updateCurrentScreen);
 
   const getHeaderOptions = () => {
-    return TOTAL_SCREENS.map((screen, i) => (
-      <div
-        key={screen.screen_name}
-        className={getHeaderOptionsClass(i)}
-        onClick={() => switchScreen(i, screen)}
-      >
-        <span>{screen.screen_name}</span>
-      </div>
-    ));
-  };
+    return (
+      TOTAL_SCREENS.map((screen, i) => (
+        <div
+          key={screen.screen_name}
+          className={getHeaderOptionsClass(i)}
+          onClick={() => switchScreen(i, screen)}>
+          <span>{screen.screen_name}</span>
+        </div>
+      ))
+    )
+  }
 
   const getHeaderOptionsClass = (index) => {
     let classes = "header-option";
@@ -46,21 +47,19 @@ export default function Header() {
     if (!screenComponent) return;
 
     screenComponent.scrollIntoView({ behavior: "smooth" });
-    selectedScreen(index);
+    setSelectedScreen(index);
     setShowHeaderOptions(false);
   };
 
   return (
     <div>
       <div
-        className="header-container"
-        onClick={() => setShowHeaderOptions(!showHeaderOptions)}
-      >
+        className="header-container" 
+        onClick={() => setShowHeaderOptions(!showHeaderOptions)}>
         <div className="header-parent">
           <div
             className="header-hamburger"
-            onClick={() => setShowHeaderOptions(!showHeaderOptions)}
-          >
+            onClick={() => setShowHeaderOptions(!showHeaderOptions)}>
             <FontAwesomeIcon className="header-hamburger-bars" icon={faBars} />
           </div>
           <div className="header-logo">
@@ -71,8 +70,7 @@ export default function Header() {
               showHeaderOptions
                 ? "header-options show-hamburger-options"
                 : "header-options"
-            }
-          >
+            }>
             {getHeaderOptions()}
           </div>
         </div>
