@@ -71,7 +71,7 @@
     justify-content: space-around;
     background-color: #1f2235;
     z-index: 1000;
-    opacity: 0.5;
+    opacity: 0.8;
     transition: all 0.8s ease-out;
   }
   .header-option-seperator {
