@@ -44,7 +44,7 @@ export default class ScrollService {
     }
 
     checkCurrentScreenUnderViewport = (event) => {
-        if (!event || object.keys(event).length < 1)
+        if (!event || Object.keys(event).length < 1)
             return;
         for (let screen of TOTAL_SCREENS) {
             let screenFromDOM = document.getElementById(screen.screen_name);
@@ -59,7 +59,7 @@ export default class ScrollService {
                     ScrollService.currentScreenFadeIn.next({
                         fadeInScreen: screen.screen_name
                     });
-                    screen['alreadyRendered'] = true;
+                    screen["alreadyRendered"] = true;
                     break;
                 }
                 if (fullyVisible) {
