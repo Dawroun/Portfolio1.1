@@ -30,6 +30,35 @@ export default function Resume(props) {
     </div>;
   };
 
+  const resumeBullets = [
+    { label: "Education", logoSrc: "education.svg" },
+    { label: "Work History", logoSrc: "work-history.svg" },
+    { label: "Programming Skills", logoSrc: "programming-skills.svg" },
+    { label: "Projects", logoSrc: "projects.svg" },
+    { label: "Interests", logoSrc: "interests.svg" },
+  ];
+
+  const programmingSkillDetails = [
+      {skill: "JavaScript", ratingPercentage: 85},
+      {skill: "React JS", ratingPercentage: 80},
+      {skill: "Node JS", ratingPercentage: 30},
+      {skill: "Express JS", ratingPercentage: 25},
+      {skill: "HTML", ratingPercentage: 88},
+      {skill: "CSS", ratingPercentage: 83},
+      {skill: "Bootstrap", ratingPercentage: 70},
+      {skill: "jQuery", ratingPercentage: 65},
+      {skill: "C++", ratingPercentage: 90},
+      {skill: "C", ratingPercentage: 80},
+      {skill: "MYSQL", ratingPercentage: 40},
+  ];
+
+  const projectDetails =[
+    {
+      title: "Personal Poprtfolio Website",
+      duration: { fromDate: "2021", toDate: ""}
+    }
+  ]
+
   let fadeInScreenHandler = (screen) => {
     if (screen.fadeScreen !== props.id) return;
     Animations.animations.faInScreen(props.id);
