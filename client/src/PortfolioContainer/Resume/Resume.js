@@ -16,7 +16,8 @@ export default function Resume(props) {
     ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
   const ResumeHeading = (props) => {
-    <div className="resume-heading">
+    return (
+      <div className="resume-heading">
       <div className="resume-main-heading">
         <div className="heading-bullet">
           <span>{props.heading ? props.heading : ""}</span>
@@ -35,7 +36,9 @@ export default function Resume(props) {
           <span>{props.description ? props.description : ""}</span>
         </div>
       </div>
-    </div>;
+    </div>
+    );
+    
   };
 
   const resumeBullets = [
@@ -182,10 +185,57 @@ export default function Resume(props) {
     </div>,
   ];
 
+  const handleCarousal = (index) => {
+    let offsetHeight = 360;
+    let newCarousalOffset = {
+      style: { transform: "translateY(" + index * offsetHeight * -1 + ")" },
+    };
+    setCarousalOffSetStyle(newCarousalOffset);
+    setSelectedBulletIndex(index);
+  };
+
+  const getBullets = () => {
+    return resumeBullets.map((bullet, index) => (
+      <div
+        onClick={() => handleCarousal(index)}
+        className={
+          index === selectedBulletIndex ? "bullet selected-bullet" : "bullet"
+        }
+        key={index}
+      >
+        <img
+          src={require(`../../assets/Resume/${bullet.logoSrc}`)}
+          alt="oops,,, no internet connection"
+          className="bullet-logo"
+        />
+      </div>
+    ));
+  };
+
+  const getResumeScreen = () => {
+    return (
+      <div
+        style={carousalOffSetStyle.style}
+        className="resume-details-carousal"
+      >
+        {resumeDetails.map((resumeDetail) => resumeDetail)}
+      </div>
+    );
+  };
+
   return (
     <div className="resume-container screen-container" id={props.id || ""}>
       <div className="resume-content">
         <ScreenHeading title={"Resume"} subHeading={"My Formal Bio Details"} />
+        <div className="resume-card">
+          <div className="resume-bullets">
+            <div className="bullet-container">
+              <div className="bullet-icons"></div>
+              <div className="bullets">{getBullets()}</div>
+            </div>
+          </div>
+          <div className="resume-bullets-details">{getResumeScreen()}</div>
+        </div>
       </div>
     </div>
   );
