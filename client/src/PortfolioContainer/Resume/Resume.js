@@ -7,6 +7,14 @@ export default function Resume(props) {
   const [selectedBulletIndex, setSelectedBulletIndex] = useState(0);
   const [carousalOffSetStyle, setCarousalOffSetStyle] = useState({});
 
+  let fadeInScreenHandler = (screen) => {
+    if (screen.fadeScreen !== props.id) return;
+    Animations.animations.faInScreen(props.id);
+  };
+
+  const fadeInSubscription =
+    ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
+
   const ResumeHeading = (props) => {
     <div className="resume-heading">
       <div className="resume-main-heading">
@@ -110,7 +118,6 @@ export default function Resume(props) {
           also doing projects as a freelancer
         </span>
       </div>
-
       <div className="experience-description">
         <span className="resume-description-text">
           - Taught and helped 1000+ students to gain the basic and life-lasting
@@ -126,16 +133,54 @@ export default function Resume(props) {
           I was in the team who created the official website of our Academy
         </span>
       </div>
+      ,
+      <div
+        className="resume-screen-container programming-skills-container"
+        key="programming-skills"
+      >
+        {programmingSkillDetails.map((skill, index) => (
+          <div className="skill-parent" key={index}>
+            <div className="heading-bullet"></div>
+            <span>{skill.skill}</span>
+            <div className="skill-percentage">
+              <div
+                style={{ width: skill.ratingPercentage + "%" }}
+                className="active-percentage"
+              ></div>
+            </div>
+          </div>
+        ))}
+      </div>
+      ,
+      <div className="resume-screen-container" key="projects">
+        {projectDetails.map((projectDetails, index) => (
+          <ResumeHeading
+            key={index}
+            heading={projectDetails.title}
+            subHeading={projectDetails.subHeading}
+            description={projectDetails.description}
+            fromDate={projectDetails.duration.fromDate}
+            toDate={projectDetails.duration.toDate}
+          />
+        ))}
+      </div>
+      ,
+      <div className="resume-screen-container" key="interests">
+        <ResumeHeading
+          heading="Teaching"
+          description="Apart being a tech enthusiast and a code writer, i also love to teach people what i know simply because i believe in sharing"
+        />
+        <ResumeHeading
+          heading="Music"
+          description="Listening to smoothing music is something i can never compromise with, skimming through Spotify's classic songs charts is at times the best stress reliever that i can get my hands on."
+        />
+        <ResumeHeading
+          heading="Football"
+          description="I am a huge fan of Football in terms of both playing and watching football matches. Additionally, i used to play football with my students on Sundays"
+        />
+      </div>
     </div>,
   ];
-
-  let fadeInScreenHandler = (screen) => {
-    if (screen.fadeScreen !== props.id) return;
-    Animations.animations.faInScreen(props.id);
-  };
-
-  const fadeInSubscription =
-    ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
   return (
     <div className="resume-container screen-container" id={props.id || ""}>
