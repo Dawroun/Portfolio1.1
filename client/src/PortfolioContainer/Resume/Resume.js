@@ -3,6 +3,8 @@ import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animations";
 
+import "./Resume.css";
+
 export default function Resume(props) {
   const [selectedBulletIndex, setSelectedBulletIndex] = useState(0);
   const [carousalOffSetStyle, setCarousalOffSetStyle] = useState({});
@@ -18,27 +20,26 @@ export default function Resume(props) {
   const ResumeHeading = (props) => {
     return (
       <div className="resume-heading">
-      <div className="resume-main-heading">
-        <div className="heading-bullet">
-          <span>{props.heading ? props.heading : ""}</span>
-          {props.fromDate && props.toDate ? (
-            <div className="heading-date">
-              {props.fromDate + " " + props.toDate}
-            </div>
-          ) : (
-            <div></div>
-          )}
-        </div>
-        <div className="resume-sub-heading">
-          <span>{props.subHeading ? props.subHeading : ""}</span>
-        </div>
-        <div className="resume-heading-description">
-          <span>{props.description ? props.description : ""}</span>
+        <div className="resume-main-heading">
+          <div className="heading-bullet">
+            <span>{props.heading ? props.heading : ""}</span>
+            {props.fromDate && props.toDate ? (
+              <div className="heading-date">
+                {props.fromDate + "-" + props.toDate}
+              </div>
+            ) : (
+              <div></div>
+            )}
+          </div>
+          <div className="resume-sub-heading">
+            <span>{props.subHeading ? props.subHeading : ""}</span>
+          </div>
+          <div className="resume-heading-description">
+            <span>{props.description ? props.description : ""}</span>
+          </div>
         </div>
       </div>
-    </div>
     );
-    
   };
 
   const resumeBullets = [
@@ -188,7 +189,7 @@ export default function Resume(props) {
   const handleCarousal = (index) => {
     let offsetHeight = 360;
     let newCarousalOffset = {
-      style: { transform: "translateY(" + index * offsetHeight * -1 + ")" },
+      style: { transform: "translateY(" + index * offsetHeight * -1 + "px)" },
     };
     setCarousalOffSetStyle(newCarousalOffset);
     setSelectedBulletIndex(index);
@@ -204,10 +205,11 @@ export default function Resume(props) {
         key={index}
       >
         <img
-          src={require(`../../assets/Resume/${bullet.logoSrc}`)}
-          alt="oops,,, no internet connection"
+          src={require(`../../assets/Resume/${bullet.logoSrc}`).default}
+          alt="B"
           className="bullet-logo"
         />
+        <span className="bullet-label">{bullet.label}</span>
       </div>
     ));
   };
