@@ -56,19 +56,22 @@ export default function Resume(props) {
     {
       title: "Personal Poprtfolio Website",
       duration: { fromDate: "2021", toDate: "" },
-      description: "A personal portfolio website to show all my details and projects at one place.",
+      description:
+        "A personal portfolio website to show all my details and projects at one place.",
       subHeading: "Technologies used: React JS, CSS",
     },
     {
       title: "Ecommerce Website",
       duration: { fromDate: "early 2020", toDate: "late 2020" },
-      description: "Online ecommerce website for showcasing and selling products online with.",
+      description:
+        "Online ecommerce website for showcasing and selling products online with.",
       subHeading: "Technologies used: React JS, Bootstrap, Express JS, Node JS",
     },
     {
       title: "2048 Game",
       duration: { fromDate: "2020", toDate: "2021" },
-      description: "Single-player sliding tile puzzle game with amazing animations.",
+      description:
+        "Single-player sliding tile puzzle game with amazing animations.",
       subHeading: "Technologies used: JavaScript, CSS Grid, Animations",
     },
   ];
@@ -93,6 +96,36 @@ export default function Resume(props) {
         fromDate={"2014"}
         toDate={"2017"}
       />
+    </div>,
+    <div className="resume-screen-container" key="work-experience">
+      <ResumeHeading
+        heading={"iSystem IT Academy"}
+        subHeading={"Foundation Programming and FrontEnd Mentor"}
+        fromDate={"2021"}
+        toDate={"present"}
+      />
+      <div className="experience-description">
+        <span className="resume-description-text">
+          Currently working as a Front-End and C++ Mentor in IT Academy, and
+          also doing projects as a freelancer
+        </span>
+      </div>
+
+      <div className="experience-description">
+        <span className="resume-description-text">
+          - Taught and helped 1000+ students to gain the basic and life-lasting
+          skills of programming especially frontend skills.
+        </span>
+        <br />
+        <span className="resume-description-text">
+          - had classes in which students learn how to work with sensors, stream
+          of electricity and LEDs via ARDUINO UNO.
+        </span>
+        <br />
+        <span className="resume-description-text">
+          I was in the team who created the official website of our Academy
+        </span>
+      </div>
     </div>,
   ];
 
