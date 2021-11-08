@@ -39,25 +39,62 @@ export default function Resume(props) {
   ];
 
   const programmingSkillDetails = [
-      {skill: "JavaScript", ratingPercentage: 85},
-      {skill: "React JS", ratingPercentage: 80},
-      {skill: "Node JS", ratingPercentage: 30},
-      {skill: "Express JS", ratingPercentage: 25},
-      {skill: "HTML", ratingPercentage: 88},
-      {skill: "CSS", ratingPercentage: 83},
-      {skill: "Bootstrap", ratingPercentage: 70},
-      {skill: "jQuery", ratingPercentage: 65},
-      {skill: "C++", ratingPercentage: 90},
-      {skill: "C", ratingPercentage: 80},
-      {skill: "MYSQL", ratingPercentage: 40},
+    { skill: "JavaScript", ratingPercentage: 85 },
+    { skill: "React JS", ratingPercentage: 80 },
+    { skill: "Node JS", ratingPercentage: 30 },
+    { skill: "Express JS", ratingPercentage: 25 },
+    { skill: "HTML", ratingPercentage: 88 },
+    { skill: "CSS", ratingPercentage: 83 },
+    { skill: "Bootstrap", ratingPercentage: 70 },
+    { skill: "jQuery", ratingPercentage: 65 },
+    { skill: "C++", ratingPercentage: 90 },
+    { skill: "C", ratingPercentage: 80 },
+    { skill: "MYSQL", ratingPercentage: 40 },
   ];
 
-  const projectDetails =[
+  const projectDetails = [
     {
       title: "Personal Poprtfolio Website",
-      duration: { fromDate: "2021", toDate: ""}
-    }
-  ]
+      duration: { fromDate: "2021", toDate: "" },
+      description: "A personal portfolio website to show all my details and projects at one place.",
+      subHeading: "Technologies used: React JS, CSS",
+    },
+    {
+      title: "Ecommerce Website",
+      duration: { fromDate: "early 2020", toDate: "late 2020" },
+      description: "Online ecommerce website for showcasing and selling products online with.",
+      subHeading: "Technologies used: React JS, Bootstrap, Express JS, Node JS",
+    },
+    {
+      title: "2048 Game",
+      duration: { fromDate: "2020", toDate: "2021" },
+      description: "Single-player sliding tile puzzle game with amazing animations.",
+      subHeading: "Technologies used: JavaScript, CSS Grid, Animations",
+    },
+  ];
+
+  const resumeDetails = [
+    <div className="resume-screen-container" key="education">
+      <ResumeHeading
+        heading={"RosNoU in Moscow,Russia"}
+        subHeading={"BACHELOR OF COMPUTER SCIENCE AND TECHNOLOGY"}
+        fromDate={"2018"}
+        toDate={"2021"}
+      />
+      <ResumeHeading
+        heading={"R&D Learning center"}
+        subHeading={"IELTS Certificate of British Council"}
+        fromDate={"2016"}
+        toDate={"2017"}
+      />
+      <ResumeHeading
+        heading={"Vocational College of Transport and Communication"}
+        subHeading={"Diploma of Vocational College."}
+        fromDate={"2014"}
+        toDate={"2017"}
+      />
+    </div>,
+  ];
 
   let fadeInScreenHandler = (screen) => {
     if (screen.fadeScreen !== props.id) return;
