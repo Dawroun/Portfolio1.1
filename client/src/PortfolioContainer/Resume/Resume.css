@@ -35,3 +35,82 @@
 .resume-details-carousal {
   transition: transform 1s ease-out;
 }
+
+.bullet-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.bullets {
+  width: 80%;
+  position: relative;
+  z-index: 2;
+}
+
+.bullet {
+  display: flex;
+  align-items: center;
+  background-color: #1f2235;
+  height: 40px;
+  margin: 15px 0;
+  padding: 0 8px;
+  border-radius: 20px;
+  width: 30px;
+  transition: width 0.6s ease;
+  cursor: pointer;
+}
+
+.bullet-label {
+  font-size: 14px;
+  white-space: nowrap;
+  font-family: "Poppins SemiBold";
+}
+
+.bullet-logo {
+  height: 16px;
+  margin: 0 30px 0 0;
+}
+
+.bullet-icons {
+  width: 34px;
+  height: 100%;
+  z-index: 1;
+  background-color: #1f2235;
+  position: absolute;
+}
+
+.selected-bullet {
+  color: #fff;
+  width: 100%;
+}
+
+.resume-screen-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 360px;
+  width: 100%;
+}
+
+.resume-heading {
+  display: flex;
+  flex-direction: column;
+}
+
+.resume-main-heading {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.heading-bullet {
+  position: absolute;
+  left: -30px;
+  height: 15px;
+  width: 15px;
+  top: 5px;
+  background-color: var(--dark-orange);
+}

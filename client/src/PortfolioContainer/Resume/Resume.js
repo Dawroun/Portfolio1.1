@@ -21,22 +21,21 @@ export default function Resume(props) {
     return (
       <div className="resume-heading">
         <div className="resume-main-heading">
-          <div className="heading-bullet">
-            <span>{props.heading ? props.heading : ""}</span>
-            {props.fromDate && props.toDate ? (
-              <div className="heading-date">
-                {props.fromDate + "-" + props.toDate}
-              </div>
-            ) : (
-              <div></div>
-            )}
-          </div>
-          <div className="resume-sub-heading">
-            <span>{props.subHeading ? props.subHeading : ""}</span>
-          </div>
-          <div className="resume-heading-description">
-            <span>{props.description ? props.description : ""}</span>
-          </div>
+          <div className="heading-bullet"></div>
+          <span>{props.heading ? props.heading : ""}</span>
+          {props.fromDate && props.toDate ? (
+            <div className="heading-date">
+              {props.fromDate + "-" + props.toDate}
+            </div>
+          ) : (
+            <div></div>
+          )}
+        </div>
+        <div className="resume-sub-heading">
+          <span>{props.subHeading ? props.subHeading : ""}</span>
+        </div>
+        <div className="resume-heading-description">
+          <span>{props.description ? props.description : ""}</span>
         </div>
       </div>
     );
@@ -67,7 +66,7 @@ export default function Resume(props) {
   const projectDetails = [
     {
       title: "Personal Poprtfolio Website",
-      duration: { fromDate: "2021", toDate: "" },
+      duration: { fromDate: "October,2021", toDate: "November,2021" },
       description:
         "A personal portfolio website to show all my details and projects at one place.",
       subHeading: "Technologies used: React JS, CSS",
@@ -137,52 +136,49 @@ export default function Resume(props) {
           I was in the team who created the official website of our Academy
         </span>
       </div>
-      ,
-      <div
-        className="resume-screen-container programming-skills-container"
-        key="programming-skills"
-      >
-        {programmingSkillDetails.map((skill, index) => (
-          <div className="skill-parent" key={index}>
-            <div className="heading-bullet"></div>
-            <span>{skill.skill}</span>
-            <div className="skill-percentage">
-              <div
-                style={{ width: skill.ratingPercentage + "%" }}
-                className="active-percentage"
-              ></div>
-            </div>
+    </div>,
+    <div
+      className="resume-screen-container programming-skills-container"
+      key="programming-skills"
+    >
+      {programmingSkillDetails.map((skill, index) => (
+        <div className="skill-parent" key={index}>
+          <div className="heading-bullet"></div>
+          <span>{skill.skill}</span>
+          <div className="skill-percentage">
+            <div
+              style={{ width: skill.ratingPercentage + "%" }}
+              className="active-percentage"
+            ></div>
           </div>
-        ))}
-      </div>
-      ,
-      <div className="resume-screen-container" key="projects">
-        {projectDetails.map((projectDetails, index) => (
-          <ResumeHeading
-            key={index}
-            heading={projectDetails.title}
-            subHeading={projectDetails.subHeading}
-            description={projectDetails.description}
-            fromDate={projectDetails.duration.fromDate}
-            toDate={projectDetails.duration.toDate}
-          />
-        ))}
-      </div>
-      ,
-      <div className="resume-screen-container" key="interests">
+        </div>
+      ))}
+    </div>,
+    <div className="resume-screen-container" key="projects">
+      {projectDetails.map((projectDetails, index) => (
         <ResumeHeading
-          heading="Teaching"
-          description="Apart being a tech enthusiast and a code writer, i also love to teach people what i know simply because i believe in sharing"
+          key={index}
+          heading={projectDetails.title}
+          subHeading={projectDetails.subHeading}
+          description={projectDetails.description}
+          fromDate={projectDetails.duration.fromDate}
+          toDate={projectDetails.duration.toDate}
         />
-        <ResumeHeading
-          heading="Music"
-          description="Listening to smoothing music is something i can never compromise with, skimming through Spotify's classic songs charts is at times the best stress reliever that i can get my hands on."
-        />
-        <ResumeHeading
-          heading="Football"
-          description="I am a huge fan of Football in terms of both playing and watching football matches. Additionally, i used to play football with my students on Sundays"
-        />
-      </div>
+      ))}
+    </div>,
+    <div className="resume-screen-container" key="interests">
+      <ResumeHeading
+        heading="Teaching"
+        description="Apart being a tech enthusiast and a code writer, i also love to teach people what i know simply because i believe in sharing"
+      />
+      <ResumeHeading
+        heading="Music"
+        description="Listening to smoothing music is something i can never compromise with, skimming through Spotify's classic songs charts is at times the best stress reliever that i can get my hands on."
+      />
+      <ResumeHeading
+        heading="Football"
+        description="I am a huge fan of Football in terms of both playing and watching football matches. Additionally, i used to play football with my students on Sundays"
+      />
     </div>,
   ];
 
