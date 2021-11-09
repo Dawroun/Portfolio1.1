@@ -17,6 +17,28 @@ export default function Testimonial(props) {
   const fadeInSubscription =
     ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
+  const options = {
+    loop: true,
+    margin: 0,
+    nav: true,
+    animateIn: "bounceInRight",
+    animatOut: "bounceOutRight",
+    dots: true,
+    autoplay: true,
+    smartSpeed: 1000,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      768: {
+        items: 1,
+      },
+      1000: {
+        items: 3,
+      },
+    },
+  };
+
   return (
     <div>
       <ScreenHeading
@@ -26,7 +48,11 @@ export default function Testimonial(props) {
       <section className="testimonial-section" id={props.id || ""}>
         <div className="container">
           <div className="row">
-            <OwlCarousel className="owl-carousel" id="testimonial-carousel">
+            <OwlCarousel
+              className="owl-carousel"
+              id="testimonial-carousel"
+              {...options}
+            >
               <div className="col-lg-12">
                 <div className="testi-item">
                   <div className="testi-comment">
@@ -96,7 +122,7 @@ export default function Testimonial(props) {
                   </div>
                   <div className="client-info">
                     <img
-                      src="img/Testimonial/lady.png"
+                      src="img/Testimonial/man.png"
                       alt="no internet connection"
                     />
                     <h5>Daisy Dominic</h5>
@@ -135,7 +161,7 @@ export default function Testimonial(props) {
                   </div>
                   <div className="client-info">
                     <img
-                      src="img/Testimonial/lady.png"
+                      src="img/Testimonial/mike.png"
                       alt="no internet connection"
                     />
                     <h5>Daisy Dominic</h5>
@@ -174,7 +200,7 @@ export default function Testimonial(props) {
                   </div>
                   <div className="client-info">
                     <img
-                      src="img/Testimonial/lady.png"
+                      src="img/Testimonial/man.png"
                       alt="no internet connection"
                     />
                     <h5>Daisy Dominic</h5>
