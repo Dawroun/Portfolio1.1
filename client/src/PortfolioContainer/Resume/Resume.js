@@ -50,16 +50,16 @@ export default function Resume(props) {
   ];
 
   const programmingSkillDetails = [
-    { skill: "JavaScript", ratingPercentage: 85 },
-    { skill: "React JS", ratingPercentage: 80 },
+    { skill: "JavaScript", ratingPercentage: 88 },
+    { skill: "React JS", ratingPercentage: 85 },
     { skill: "Node JS", ratingPercentage: 30 },
     { skill: "Express JS", ratingPercentage: 25 },
-    { skill: "HTML", ratingPercentage: 88 },
-    { skill: "CSS", ratingPercentage: 83 },
+    { skill: "HTML", ratingPercentage: 90 },
+    { skill: "CSS", ratingPercentage: 85 },
     { skill: "Bootstrap", ratingPercentage: 70 },
     { skill: "jQuery", ratingPercentage: 65 },
-    { skill: "C++", ratingPercentage: 90 },
-    { skill: "C", ratingPercentage: 80 },
+    { skill: "C++", ratingPercentage: 92 },
+    { skill: "C", ratingPercentage: 85 },
     { skill: "MYSQL", ratingPercentage: 40 },
   ];
 

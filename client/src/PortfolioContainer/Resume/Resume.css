@@ -113,4 +113,60 @@
   width: 15px;
   top: 5px;
   background-color: var(--dark-orange);
+  border-radius: 50%;
+}
+
+.resume-sub-heading {
+  font-size: 14px;
+  font-family: "Poppin SemiBold";
+  color: #111;
+  margin: 10px 0 0 0;
+}
+
+.resume-heading-description {
+  font-size: 12px;
+  text-align: justify;
+}
+
+.heading-date {
+  background-color: var(--dark-orange);
+  padding: 4px 12px;
+  font-size: 14px;
+  border-radius: 14px;
+  color: #fff;
+}
+
+.skill-parent {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 50%;
+}
+
+.programming-skills-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.skill-percentage {
+  position: relative;
+  height: 15px;
+  width: 70%;
+  background-color: var(--dark-orange);
+}
+
+.skill-percentage .active-percentage {
+  height: 15px;
+  transition: 0.8s ease;
+  position: absolute;
+  background-color: #1f2235;
+}
+
+.skill-parent span{
+    font-family: "Poppins SemiBold";
+    font-size: 16px;
+    color: var(--dark-orange);
 }
