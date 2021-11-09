@@ -8,6 +8,8 @@ import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animations";
 
+import "./Testimonial.css";
+
 export default function Testimonial(props) {
   let fadeInScreenHandler = (screen) => {
     if (screen.fadeScreen !== props.id) return;
@@ -212,6 +214,9 @@ export default function Testimonial(props) {
           </div>
         </div>
       </section>
+      <div className="footer-image">
+        <img src="img/Testimonial/shape-bg.png" alt="Photo not responding" />
+      </div>
     </div>
   );
 }
