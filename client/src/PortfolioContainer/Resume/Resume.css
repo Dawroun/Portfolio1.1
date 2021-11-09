@@ -165,8 +165,48 @@
   background-color: #1f2235;
 }
 
-.skill-parent span{
-    font-family: "Poppins SemiBold";
-    font-size: 16px;
-    color: var(--dark-orange);
+.skill-parent span {
+  font-family: "Poppins SemiBold";
+  font-size: 16px;
+  color: var(--dark-orange);
+}
+
+@media only screen and (max-width: 1110px) {
+  .resume-card {
+    width: 880px;
+  }
+  .resume-bullets-details {
+    padding: 0 0 0 70px;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .resume-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .bullets {
+    width: 90%;
+  }
+  .resume-card {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0;
+    align-items: center;
+    width: 90%;
+  }
+  .resume-bullets-details {
+    height: 360px;
+    width: fit-content;
+    padding: 0;
+  }
+  .resume-bullets {
+    width: 100%;
+    margin: 30px 0;
+  }
+  .selected-bullet {
+    width: 100%;
+  }
 }
