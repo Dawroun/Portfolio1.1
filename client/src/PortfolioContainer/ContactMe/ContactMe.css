@@ -90,6 +90,12 @@ input:focus {
   background-color: #fff;
 }
 
+.send-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 form button {
   margin-top: 15px;
   padding: 5px;
@@ -127,4 +133,23 @@ form {
 
 .col i:hover {
   transform: scale(1.5);
+}
+
+@media screen and (min-width: 940px) {
+  .back-form {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+
+  .img-back {
+    flex: 1;
+    align-self: center;
+    margin-right: 20px;
+  }
+  form {
+    flex: 0.9;
+  }
 }
