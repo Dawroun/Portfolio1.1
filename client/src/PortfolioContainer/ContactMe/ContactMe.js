@@ -13,8 +13,8 @@ import "./ContactMe.css";
 
 export default function ContactMe(props) {
   let fadeInScreenHandler = (screen) => {
-    if (screen.fadeScreen !== props.id) return;
-    Animations.animations.faInScreen(props.id);
+    if (screen.fadeInScreen !== props.id) return;
+    Animations.animations.fadeInScreen(props.id);
   };
 
   const fadeInSubscription =

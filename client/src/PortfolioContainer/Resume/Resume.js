@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animations";
@@ -10,8 +10,8 @@ export default function Resume(props) {
   const [carousalOffSetStyle, setCarousalOffSetStyle] = useState({});
 
   let fadeInScreenHandler = (screen) => {
-    if (screen.fadeScreen !== props.id) return;
-    Animations.animations.faInScreen(props.id);
+    if (screen.fadeInScreen !== props.id) return;
+    Animations.animations.fadeInScreen(props.id);
   };
 
   const fadeInSubscription =
@@ -108,6 +108,8 @@ export default function Resume(props) {
         toDate={"2017"}
       />
     </div>,
+
+
     <div className="resume-screen-container" key="work-experience">
       <ResumeHeading
         heading={"iSystem IT Academy"}
@@ -137,6 +139,7 @@ export default function Resume(props) {
         </span>
       </div>
     </div>,
+
     <div
       className="resume-screen-container programming-skills-container"
       key="programming-skills"
@@ -154,6 +157,8 @@ export default function Resume(props) {
         </div>
       ))}
     </div>,
+
+
     <div className="resume-screen-container" key="projects">
       {projectDetails.map((projectDetails, index) => (
         <ResumeHeading
@@ -166,6 +171,8 @@ export default function Resume(props) {
         />
       ))}
     </div>,
+
+
     <div className="resume-screen-container" key="interests">
       <ResumeHeading
         heading="Teaching"
@@ -184,6 +191,7 @@ export default function Resume(props) {
 
   const handleCarousal = (index) => {
     let offsetHeight = 360;
+
     let newCarousalOffset = {
       style: { transform: "translateY(" + index * offsetHeight * -1 + "px)" },
     };
@@ -220,6 +228,12 @@ export default function Resume(props) {
       </div>
     );
   };
+
+  useEffect(() => {
+    return () => {
+      fadeInSubscription.unsubscribe();
+    };
+  }, [fadeInSubscription]);
 
   return (
     <div className="resume-container screen-container" id={props.id || ""}>

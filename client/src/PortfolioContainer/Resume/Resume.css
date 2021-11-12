@@ -186,6 +186,9 @@
     flex-direction: column;
     align-items: center;
   }
+  .heading-bullet {
+    display: none;
+  }
   .bullets {
     width: 90%;
   }
