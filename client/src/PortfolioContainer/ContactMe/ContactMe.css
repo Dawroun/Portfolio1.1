@@ -116,6 +116,15 @@ form button:hover {
   border: 2px solid #1f2235;
 }
 
+button .load {
+  width: 100%;
+}
+
+button .load img {
+  width: 60px;
+  color: aquamarine ;
+}
+
 .img-back {
   flex: 1;
   align-self: center;
